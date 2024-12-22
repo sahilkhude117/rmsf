@@ -13,6 +13,21 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
+      oswald: ["Oswald", "sans-serif"],
+    },
+    animation: {
+      float: "float 3s ease-in-out infinite",
+    },
+    keyframes: {
+      float: {
+        "0%, 100%": { transform: "translateY(-10px)" },
+        "50%": { transform: "translateY(10px)" },
+      },
+    },
   },
+    
+
   plugins: [],
 } satisfies Config;
