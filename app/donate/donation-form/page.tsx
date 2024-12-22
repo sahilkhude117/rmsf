@@ -1,4 +1,3 @@
-'use client'
 import { AmountPreset } from "@/components/donation/AmountPreset";
 import { DonationBar } from "@/components/donation/DonationBar";
 import { ToggleButton } from "@/components/donation/ToggleButton";

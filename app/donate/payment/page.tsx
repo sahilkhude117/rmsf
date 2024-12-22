@@ -8,7 +8,15 @@ import { useDispatch } from "react-redux";
 
 export default function(){
     const dispatch = useDispatch();
-    const {userInfo} = useSelector((state: RootState) => state.donation);
+    const {userInfo ,customAmount} = useSelector((state: RootState) => state.donation);
+
+    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(
+          setUserInfo({
+            includeProcessing: e.target.checked,
+          })
+        );
+      };
 
     return <div>
         <DonationBar
@@ -25,12 +33,12 @@ export default function(){
                 <input
                     type="checkbox"
                     id="includeProcessing"
-                    checked = {userInfo.includeProcessing}
-                    onChange={(e) => {dispatch(setUserInfo({includeProcessing:true}))}}
+                    checked={userInfo.includeProcessing}
+                    onChange={handleCheckboxChange}
                     className="w-5 h-5 text-blue-500 border-blue-500 rounded cursor-pointer focus:ring-blue-500 mr-2"
                 />
                 <label className="text-gray-700 flex justify-center items-center">
-                    Optionally add $0.70 to cover processing fees
+                    Optionally add {Number(customAmount) * 0.02} to cover processing fees
                 </label>
             </div>
         </DonationBar>

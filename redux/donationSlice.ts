@@ -30,7 +30,6 @@ export enum DONATION_TYPE {
 
 interface DonationState {
     donationType: DONATION_TYPE;
-    amount: number;
     customAmount: string;
     campaign: string;
     userInfo: UserInfo;
@@ -46,8 +45,7 @@ export enum PAYMENT_METHOD {
 
 const initialState: DonationState = {
     donationType: DONATION_TYPE.ONE_TIME,
-    amount: 0,
-    customAmount: '',
+    customAmount: '0',
     campaign: '',
     userInfo: {
         firstName: '',
@@ -80,9 +78,6 @@ const donationSlice = createSlice({
         setDonationType(state, action: PayloadAction<DONATION_TYPE>){
             state.donationType = action.payload;
         },
-        setAmount(state, action: PayloadAction<number>){
-            state.amount = action.payload;
-        },
         setCustomAmount(state, action: PayloadAction<string>){
             state.customAmount = action.payload;
         },
@@ -106,7 +101,6 @@ const donationSlice = createSlice({
 
 export const {
     setDonationType,
-    setAmount,
     setCustomAmount,
     setCampaign,
     setUserInfo,

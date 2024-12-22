@@ -11,7 +11,23 @@ import { useDispatch } from "react-redux";
 
 export default function(){
     const dispatch = useDispatch();
-    const {userInfo} = useSelector((state: RootState) => state.donation);
+    const {userInfo,donationType,customAmount} = useSelector((state: RootState) => state.donation);
+
+    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(
+          setUserInfo({
+            anonymous : e.target.checked,
+          })
+        );
+      };
+
+    const handleAgreedChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(
+          setUserInfo({
+            agreed : e.target.checked,
+          })
+        );
+      };
 
     return <div>
         <DonationBar
@@ -29,8 +45,8 @@ export default function(){
                 <input
                     type="checkbox"
                     id="isAnonymous"
-                    checked = {userInfo.anonymous}
-                    onChange={() => {dispatch(setUserInfo({anonymous:true}))}}
+                    checked={userInfo.anonymous}
+                    onChange={handleCheckboxChange}
                     className="w-5 h-5 text-blue-500 border-blue-500 rounded cursor-pointer focus:ring-blue-500 mr-2"
                 />
                 <label className="text-gray-700 flex justify-center items-center">
@@ -57,8 +73,8 @@ export default function(){
                 <input
                     type="checkbox"
                     id="terms"
-                    checked = {userInfo.agreed}
-                    onChange={() => {dispatch(setUserInfo({agreed:true}))}}
+                    checked={userInfo.agreed}
+                    onChange={handleAgreedChange}
                     className="w-5 h-5 text-blue-500 border-blue-500 rounded cursor-pointer focus:ring-blue-500 mr-2"
                 />
                 <label className="text-gray-700">
@@ -66,7 +82,7 @@ export default function(){
                 </label>
             </div>
 
-            <DonationButton hrefNext="/donate/payment" title="Next" isLast={false}/>
+            <DonationButton hrefNext="/donate/payment" title={`Donate ${customAmount}  ${donationType === 0 ? '(One-time)' : '(Monthly)'}`} isLast={false}/>
 
         </DonationBar>
     </div>

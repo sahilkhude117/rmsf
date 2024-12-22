@@ -1,4 +1,3 @@
-'use client'
 import ProgramTitle from "@/components/ProgramTitle";
 
 export default function({children}:{children: React.ReactNode;}){
