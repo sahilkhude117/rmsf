@@ -20,6 +20,10 @@ export const InputBox = ({placeholder,type}:{placeholder:string;type:string}) =>
                     dispatch(setUserInfo({address : e.target.value}));
                 } else if(type === 'state'){
                     dispatch(setUserInfo({state : e.target.value}));
+                } else if (type == 'postalcode'){
+                    dispatch(setUserInfo({postalCode: e.target.value}))
+                } else if (type === 'city'){
+                    dispatch(setUserInfo({city: e.target.value}))
                 }
             }}
         />

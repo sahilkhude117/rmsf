@@ -5,14 +5,28 @@ import { DropdownItem } from "@/components/donation/DropdownItem";
 import { InputBox } from "@/components/donation/InputBox";
 import { setUserInfo } from "@/redux/donationSlice";
 import { RootState } from "@/redux/store";
+import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
 export default function(){
+    const router = useRouter();
     const dispatch = useDispatch();
     const {userInfo,donationType,customAmount} = useSelector((state: RootState) => state.donation);
 
+    const UserDetails = {
+        firstName : userInfo.firstName,
+        lastName : userInfo.lastName,
+        email : userInfo.email,
+        country : userInfo.country,
+        address : userInfo.address,
+        city : userInfo.city,
+        postalCode : Number(userInfo.postalCode),
+        state : userInfo.state,
+    }
+    
     const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(
           setUserInfo({
@@ -58,12 +72,12 @@ export default function(){
                 <InputBox placeholder="Email" type="email"/>
 
                 <DropdownItem title="Country" type="country">
-                    <option value="">India</option>
+                    <option value="india">India</option>
                 </DropdownItem>
 
                 <InputBox placeholder="Address" type="address"/>
                 <div className="flex justify-center">
-                    <InputBox placeholder="Postal Code" type="postalCode"/>
+                    <InputBox placeholder="Postal Code" type="postalcode"/>
                     <InputBox placeholder="City" type="city"/>
                 </div>
                 <InputBox placeholder="State" type="state"/>
@@ -82,8 +96,16 @@ export default function(){
                 </label>
             </div>
 
-            <DonationButton hrefNext="/donate/payment" title={`Donate ${customAmount}  ${donationType === 0 ? '(One-time)' : '(Monthly)'}`} isLast={false}/>
-
-        </DonationBar>
+            <DonationButton onClick={async() => {
+                // be call
+                try {
+                    const response = await axios.post('/api/user', UserDetails);
+                    const userId = response.data.user.id;
+                    router.push(`/donate/payment?userId=${userId}`);
+                } catch (e) {
+                    console.error("Error saving user details", e);
+                }
+            }} title={`Donate ${customAmount}  ${donationType === 'one-time' ? '(One-time)' : '(Monthly)'}`} isLast={false}/>
+            </DonationBar>
     </div>
 }

@@ -10,10 +10,10 @@ export const DropdownItem = ({title,children,type}:{title:string;children?:React
         <select onChange={(e) => {
                     if(type === 'campaign'){
                         dispatch(setCampaign(e.target.value));
-                    } else {
+                    } else if (type === 'country') {
                         dispatch(setUserInfo({country:e.target.value}))
                     }
-        1       }} 
+                }} 
                 className=" w-full px-3 py-2 border border-blue-500 rounded-lg">
               {children}
         </select>

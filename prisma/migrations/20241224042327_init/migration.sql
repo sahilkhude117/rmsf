@@ -1,9 +1,6 @@
 -- CreateEnum
 CREATE TYPE "PaymentStatus" AS ENUM ('PENDING', 'SUCCESS', 'FAILED');
 
--- CreateEnum
-CREATE TYPE "DonationType" AS ENUM ('ONE_TIME', 'MONTHLY');
-
 -- CreateTable
 CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
@@ -11,6 +8,10 @@ CREATE TABLE "User" (
     "lastName" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "country" TEXT NOT NULL,
+    "address" TEXT NOT NULL,
+    "postalCode" INTEGER NOT NULL,
+    "city" TEXT NOT NULL,
+    "state" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updateAt" TIMESTAMP(3) NOT NULL,
 
@@ -21,8 +22,9 @@ CREATE TABLE "User" (
 CREATE TABLE "Donation" (
     "id" SERIAL NOT NULL,
     "amount" INTEGER NOT NULL,
+    "campaign" TEXT NOT NULL DEFAULT 'education',
     "userId" INTEGER NOT NULL,
-    "donationType" "DonationType" NOT NULL,
+    "donationType" TEXT NOT NULL,
     "withProcessingFee" BOOLEAN NOT NULL DEFAULT false,
     "comment" TEXT,
     "paymentStatus" "PaymentStatus" NOT NULL DEFAULT 'PENDING',

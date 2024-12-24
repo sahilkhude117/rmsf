@@ -1,35 +1,42 @@
 import prisma from "@/utils/db";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse){
-    if (req.method === 'POST'){
+export const POST = async(req: Request) => {
+    
+    try {
+        const body = await req.json();
         const {
             userId,
             amount,
+            campaign,
             donationType,
             withProcessingFee,
             comment,
-        } = req.body;
+        } = body
 
-        try {
-            const donation = await prisma.donation.create({
-                data: {
-                    userId,
-                    amount,
-                    donationType,
-                    withProcessingFee,
-                    comment,
-                },
-            });
+        const donation = await prisma.donation.create({
+            data: {
+                userId,
+                amount,
+                campaign,
+                donationType,
+                withProcessingFee,
+                comment,
+            },
+        });
 
-            res.status(201).json(donation);
-        } catch (e){
-            console.error('Error creating donation:' , e);
-            res.status(500).json({error: 'Internal Server Error'});
-        }
-    } else {
-        res.setHeader('Allow',['POST']);
-        res.status(405).json({error: `Method ${req.method} not allowed`});
+        return NextResponse.json({
+            donation
+        },{
+            status:201
+        })
+    } catch (e){
+        console.log("Error", e)
+        return NextResponse.json({
+            error: 'Internal Server Error',
+            details: e
+        },{
+            status: 500
+        });
     }
 }

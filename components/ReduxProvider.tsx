@@ -11,7 +11,7 @@ interface ReduxProviderProps {
 const ReduxProvider: React.FC<ReduxProviderProps> = ({ children }) => {
   return (
     <Provider store={store}>
-      <PersistGate loading={<div>Loading..</div>} persistor={persistor}>
+      <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
         {children}
       </PersistGate>
     </Provider>

@@ -20,15 +20,16 @@ model User {
   state          String
   donations      Donation[]
   createdAt      DateTime  @default(now())
-  updateAt       DateTime  @updatedAt
+  updateAt      DateTime  @updatedAt
 }
 
 model Donation {
   id             Int       @id @default(autoincrement())
-  amount         Int       
+  amount         Int
+  campaign       String    @default("education")  
   userId         Int 
   user           User      @relation(fields: [userId], references: [id])
-  donationType   DonationType
+  donationType   String
   withProcessingFee Boolean @default(false)
   comment        String?
   paymentStatus  PaymentStatus @default(PENDING)
@@ -42,7 +43,7 @@ model Payment {
   id             Int       @id @default(autoincrement())
   donationId     Int
   donation       Donation  @relation(fields: [donationId],references: [id])
-  status         PaymentStatus
+  status         PaymentStatus @default(PENDING)
   transactionId  String    @unique
   details        Json
   createdAt      DateTime  @default(now())
@@ -54,10 +55,3 @@ enum PaymentStatus {
   SUCCESS
   FAILED
 }
-
-
-enum DonationType {
-  ONE_TIME
-  MONTHLY
-}
-

@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface UserInfo {
+    id:number;
     firstName: string;
     lastName: string;
     email: string;
@@ -8,7 +9,7 @@ interface UserInfo {
     city:string;
     state:string;
     country:string;
-    postalCode:string;
+    postalCode:number;
     anonymous: boolean;
     agreed: boolean;
     isComment:boolean;
@@ -23,14 +24,10 @@ interface CardDetails {
     billingZip: string;
 }
 
-export enum DONATION_TYPE {
-    ONE_TIME,
-    MONTHLY
-}
-
 interface DonationState {
-    donationType: DONATION_TYPE;
-    customAmount: string;
+    id:number
+    donationType: string;
+    customAmount: Number;
     campaign: string;
     userInfo: UserInfo;
     paymentMethod: PAYMENT_METHOD;
@@ -44,18 +41,20 @@ export enum PAYMENT_METHOD {
 
 
 const initialState: DonationState = {
-    donationType: DONATION_TYPE.ONE_TIME,
-    customAmount: '0',
-    campaign: '',
+    id:0,
+    donationType: 'ONE_TIME',
+    customAmount: 0,
+    campaign: "education",
     userInfo: {
+        id:0,
         firstName: '',
         lastName: '',
         email: '',
         address: '',
         city: '',
         state: '',
-        country: '',
-        postalCode: '',
+        country: 'India',
+        postalCode: 0,
         anonymous: false,
         agreed: false,
         isComment:false,
@@ -75,10 +74,10 @@ const donationSlice = createSlice({
     name: 'donation',
     initialState,
     reducers : {
-        setDonationType(state, action: PayloadAction<DONATION_TYPE>){
+        setDonationType(state, action: PayloadAction<string>){
             state.donationType = action.payload;
         },
-        setCustomAmount(state, action: PayloadAction<string>){
+        setCustomAmount(state, action: PayloadAction<number>){
             state.customAmount = action.payload;
         },
         setCampaign(state, action: PayloadAction<string>){
@@ -93,6 +92,9 @@ const donationSlice = createSlice({
         setCardDetails(state, action: PayloadAction<Partial<CardDetails>>){
             state.cardDetails = { ...state.cardDetails, ...action.payload }
         },
+        setDonationId(state, action: PayloadAction<number>){
+            state.id = action.payload;
+        },
         resetState(){
             return initialState;
         },
@@ -106,6 +108,7 @@ export const {
     setUserInfo,
     setPaymentMethod,
     setCardDetails,
+    setDonationId,
     resetState
 } = donationSlice.actions;
 
