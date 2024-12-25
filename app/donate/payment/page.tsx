@@ -20,15 +20,6 @@ export default function(){
         razorpay_signature: string;
     }
 
-    const donationDetails = {
-        userId : Number(userId),
-        amount : Number(customAmount),
-        donationType : donationType,
-        campaign : campaign,
-        withProcessingFee : userInfo.includeProcessing,
-        comment : userInfo.comment ,
-    }
-
     const loadRazorpayScript = useCallback((): Promise<boolean> => {
         return new Promise((resolve) => {
           const script = document.createElement("script");
@@ -104,7 +95,7 @@ export default function(){
         
             const orderDetails = { 
                 userId: Number(userId),
-                amount: Number(customAmount),
+                amount: customAmount,
                 donationType,
                 campaign,
                 withProcessingFee: userInfo.includeProcessing,

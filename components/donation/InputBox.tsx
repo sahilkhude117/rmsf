@@ -8,7 +8,8 @@ export const InputBox = ({placeholder,type}:{placeholder:string;type:string}) =>
     return <div className="relative m-5">
         <input
             type="text"
-            className="block w-full px-3 py-2 bg-transparent border border-blue-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 peer"
+            placeholder={placeholder}
+            className={`block w-full px-3 py-2 bg-transparent border border-blue-500 rounded-lg`}
             onChange={(e) => {
                 if(type === 'firstName'){
                     dispatch(setUserInfo({firstName : e.target.value}));
@@ -21,14 +22,11 @@ export const InputBox = ({placeholder,type}:{placeholder:string;type:string}) =>
                 } else if(type === 'state'){
                     dispatch(setUserInfo({state : e.target.value}));
                 } else if (type == 'postalcode'){
-                    dispatch(setUserInfo({postalCode: e.target.value}))
+                    dispatch(setUserInfo({postalCode: Number(e.target.value)}))
                 } else if (type === 'city'){
                     dispatch(setUserInfo({city: e.target.value}))
                 }
             }}
         />
-        <label className="absolute top-2 left-3 text-grey-500 text-sm transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8 peer-focus:text-sm peer-focus:text-blue-500">
-            {placeholder}
-        </label>
     </div>
 }

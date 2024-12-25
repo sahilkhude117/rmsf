@@ -31,8 +31,6 @@ export const POST = async(req: Request) => {
             comment,
             userId
         } = body;
-        
-        dispatch(setDonationId(donationId));
 
         const options = {
             amount: amount * 100,
