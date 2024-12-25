@@ -79,7 +79,7 @@ export default function(){
 
             const donationDetails = {
                 userId: Number(userId),
-                amount: Number(customAmount),
+                amount: customAmount,
                 donationType,
                 campaign,
                 withProcessingFee: userInfo.includeProcessing,
@@ -100,7 +100,7 @@ export default function(){
                 campaign,
                 withProcessingFee: userInfo.includeProcessing,
                 comment: userInfo.comment, 
-                donationId
+                donationId : Number(donationId),
             };
 
             try {

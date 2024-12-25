@@ -7,7 +7,7 @@ import { setCustomAmount } from "@/redux/donationSlice";
 
 export const AmountPreset = () => {
     const amount = ['5', '10', '50', '100']
-    const [selectedButton,setSelectedButton] = useState("button1");
+    const [selectedButton, setSelectedButton] = useState("button1");
     const dispatch = useDispatch();
     const {customAmount} = useSelector(
       (state: RootState) => state.donation
