@@ -1,8 +1,5 @@
-
 import razorpayInstance from "@/utils/razorpayInstance";
 import { NextResponse } from "next/server";
-
-
 
 export const POST = async(req: Request) => {
     const allowedOrigin = "http://localhost:3000"; // Change to your frontend origin in production
