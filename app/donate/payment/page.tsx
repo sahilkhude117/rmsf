@@ -175,7 +175,7 @@ export default function () {
               className={`text-white font-bold text-xl rounded-lg px-5 py-3 text-center bg-amber-500 `}
             >
               {loading ? (
-                <PulseLoader color="#fff" size={10} />
+                <PulseLoader color="#fff" size={12} />
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

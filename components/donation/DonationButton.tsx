@@ -33,7 +33,7 @@ export const DonationButton = ({
         disabled={loading}
       >
         {loading ? (
-          <PulseLoader color="#fff" size={10} />
+          <PulseLoader color="#fff" size={12} />
         ) : (
           <div className="flex justify-center items-center text-xl">
             <div className="mr-auto"></div>
