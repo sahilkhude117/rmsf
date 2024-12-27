@@ -15,7 +15,7 @@ export const ProgramCard = ({
   const router = useRouter();
   return (
     <div
-      className="w-full mt-4 flex items-center justify-center cursor-pointer animate-float transform transition duration-500 hover:scale-110 "
+      className="w-full mt-4 flex items-center justify-center cursor-pointer transform transition duration-500 hover:scale-110 "
       onClick={() => {
         router.push(href);
       }}

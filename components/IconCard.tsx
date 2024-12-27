@@ -53,9 +53,15 @@ export const IconCard = ({
       >
         <motion.div
           style={{ y: yPosition }}
-          className="transform -translate-x-1/2 -translate-y-1/2"
+          className="transform -translate-x-1/2 -translate-y-1/2 "
         >
-          <Image src={src} alt={alt} width={size} height={size} />
+          <Image
+            src={src}
+            alt={alt}
+            width={size}
+            height={size}
+            className="rounded-full"
+          />
         </motion.div>
       </div>
       <div className="text-center maz-w-4xl w-full font-bold pl-20 pr-20">
