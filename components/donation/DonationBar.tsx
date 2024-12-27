@@ -12,7 +12,7 @@ export const DonationBar = ({
 }: {
   title: string;
   hrefPrev: string;
-  onNext: any;
+  onNext?: any;
   currentPage: number;
   children: React.ReactNode;
 }) => {

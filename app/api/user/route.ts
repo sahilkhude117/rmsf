@@ -15,8 +15,20 @@ export const POST = async (req: Request) => {
       state,
     } = body;
 
-    const user = await prisma.user.create({
-      data: {
+    const user = await prisma.user.upsert({
+      where: {
+        email: email,
+      },
+      update: {
+        firstName,
+        lastName,
+        country,
+        address,
+        city,
+        postalCode,
+        state,
+      },
+      create: {
         firstName,
         lastName,
         email,

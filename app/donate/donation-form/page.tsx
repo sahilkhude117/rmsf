@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/redux/store';
-import { setCustomAmount } from '@/redux/donationSlice';
+import { setCampaign, setCustomAmount } from '@/redux/donationSlice';
 
 export default function () {
   const router = useRouter();
@@ -32,16 +32,22 @@ export default function () {
     dispatch(setCustomAmount(numericValue));
   };
 
-  const onNext = () => {
-    const amount = Number(customAmount);
-    // Validate customAmount on Next button click
-    if (amount < 1 || isNaN(amount)) {
-      setInputError('Amount must be greater than 1');
-      return;
-    }
+  const onNext = (): Promise<void> => {
+    return new Promise((resolve, reject) => {
+      const amount = Number(customAmount);
 
-    setInputError(null); // Clear error if valid
-    router.push('/donate/user-information');
+      // Validate customAmount on Next button click
+      if (amount < 1 || isNaN(amount)) {
+        setInputError('Amount must be greater than 1');
+        reject(new Error('Invalid amount'));
+        return;
+      }
+
+      setInputError(null); // Clear error if valid
+      router.push('/donate/user-information');
+
+      resolve();
+    });
   };
 
   return (
@@ -88,11 +94,20 @@ export default function () {
           </div>
         </div>
 
-        <DropdownItem title="Campaign" type="campaign">
-          <option value="education">Education</option>
-          <option value="health">Health</option>
-          <option value="cooperation">Cooperation</option>
-        </DropdownItem>
+        <div className="m-5">
+          <div className="mb-2 text-blue-500">Country</div>
+          <select
+            onChange={(e) => {
+              const value = e.target.value;
+              dispatch(setCampaign(e.target.value));
+            }}
+            className="w-full px-3 py-2 border border-blue-500 rounded-lg"
+          >
+            <option value="education">Education</option>
+            <option value="health">Health</option>
+            <option value="cooperation">Cooperation</option>
+          </select>
+        </div>
         <Comment />
         <DonationButton onClick={onNext} title="Next" isLast={false} />
       </DonationBar>

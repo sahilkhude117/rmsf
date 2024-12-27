@@ -5,9 +5,10 @@ import { DropdownItem } from '@/components/donation/DropdownItem';
 import { setUserInfo } from '@/redux/donationSlice';
 import { RootState } from '@/redux/store';
 import axios from 'axios';
+import { option } from 'framer-motion/client';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
@@ -16,9 +17,24 @@ export default function () {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState<Record<string, string | null>>({});
   const [isNextClicked, setIsNextClicked] = useState(false);
+  const [countries, setCountries] = useState<string[]>([]);
+  const [selectedCountry, setSelectedCountry] = useState<string>('');
   const { userInfo, donationType, customAmount } = useSelector(
     (state: RootState) => state.donation
   );
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await axios.get('/api/user/countries');
+        setCountries(response.data.countryNames);
+      } catch (e) {
+        console.error('Error fetching countries:', e);
+      }
+    };
+
+    fetchCountries();
+  }, []);
 
   const validationRules = {
     firstName: (value: string) =>
@@ -78,25 +94,38 @@ export default function () {
     state: userInfo.state,
   };
 
-  const onNext = async () => {
-    setIsNextClicked(true);
-    if (!validateAll()) return;
+  const onNext = (): Promise<void> => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        setIsNextClicked(true);
 
-    if (!userInfo.agreed) {
-      setErrors((prev) => ({
-        ...prev,
-        agreed: 'You must agree to the terms.',
-      }));
-      return; // Stop form submission if checkbox is not checked
-    }
+        if (!validateAll()) {
+          reject(new Error('Validation failed.'));
+          return;
+        }
 
-    try {
-      const response = await axios.post('/api/user', UserDetails);
-      const userId = response.data.user.id;
-      router.push(`/donate/payment?userId=${userId}`);
-    } catch (e) {
-      console.error('Error saving user details', e);
-    }
+        if (!userInfo.agreed) {
+          setErrors((prev) => ({
+            ...prev,
+            agreed: 'You must agree to the terms.',
+          }));
+          reject(new Error('User did not agree to terms.'));
+          return; // Stop form submission if checkbox is not checked
+        }
+
+        try {
+          const response = await axios.post('/api/user', UserDetails);
+          const userId = response.data.user.id;
+          router.push(`/donate/payment?userId=${userId}`);
+          resolve(); // Resolve when navigation is successful
+        } catch (e) {
+          console.error('Error saving user details', e);
+          reject(e); // Reject on API error
+        }
+      } catch (e) {
+        reject(e); // Handle unexpected errors
+      }
+    });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -155,9 +184,30 @@ export default function () {
           )}
         </div>
 
-        <DropdownItem title="Country" type="country">
-          <option value="india">India</option>
-        </DropdownItem>
+        {/* Countries Dropdown  */}
+
+        <div className="m-5">
+          <div className="mb-2 text-blue-500">Country</div>
+          <select
+            onChange={(e) => {
+              const value = e.target.value;
+              dispatch(setUserInfo({ country: value }));
+              setSelectedCountry(value);
+            }}
+            className="w-full px-3 py-2 border border-blue-500 rounded-lg"
+          >
+            <option value="India">India</option>
+            {countries.length > 0 ? (
+              countries.map((country, index) => (
+                <option key={index} value={country}>
+                  {country}
+                </option>
+              ))
+            ) : (
+              <option disabled>Loading...</option>
+            )}
+          </select>
+        </div>
 
         {/* Address */}
         <div className="relative m-5">
