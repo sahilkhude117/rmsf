@@ -1,7 +1,7 @@
 'use client';
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "@/redux/store";
-import { setUserInfo } from "@/redux/donationSlice";
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '@/redux/store';
+import { setUserInfo } from '@/redux/donationSlice';
 
 export const Comment = () => {
   const dispatch = useDispatch();
@@ -43,7 +43,7 @@ export const Comment = () => {
         <div className="m-5">
           <textarea
             placeholder="Your comment"
-            value={userInfo.comment || ""}
+            value={userInfo.comment || ''}
             onChange={handleCommentChange}
             className="block w-full px-3 py-2 bg-transparent border border-blue-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           ></textarea>

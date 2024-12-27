@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const TermsAndConditions = () => {
   return (
@@ -7,7 +7,7 @@ const TermsAndConditions = () => {
       <p className="mb-4">
         Welcome to Ramanlal Maniyar Smruti Foundation! These terms and
         conditions outline the rules and regulations for the use of Ramanlal
-        Maniyar Smruti Foundation's Website, located at{" "}
+        Maniyar Smruti Foundation's Website, located at{' '}
         <a
           href="https://rmsfoundationindia.org/"
           className="text-blue-600 underline"
@@ -23,20 +23,19 @@ const TermsAndConditions = () => {
         page.
       </p>
       <p className="mb-4">
-        The following terminology applies to these Terms and Conditions,
-        Privacy Statement and Disclaimer Notice and all Agreements: "Client",
-        "You" and "Your" refers to you, the person log on this website and
-        compliant to the Company's terms and conditions. "The Company",
-        "Ourselves", "We", "Our" and "Us", refers to our Company. "Party",
-        "Parties", or "Us", refers to both the Client and ourselves. All terms
-        refer to the offer, acceptance and consideration of payment necessary to
-        undertake the process of our assistance to the Client in the most
-        appropriate manner for the express purpose of meeting the Client's needs
-        in respect of provision of the Company's stated services, in accordance
-        with and subject to, prevailing law of in. Any use of the above
-        terminology or other words in the singular, plural, capitalization
-        and/or he/she or they, are taken as interchangeable and therefore as
-        referring to same.
+        The following terminology applies to these Terms and Conditions, Privacy
+        Statement and Disclaimer Notice and all Agreements: "Client", "You" and
+        "Your" refers to you, the person log on this website and compliant to
+        the Company's terms and conditions. "The Company", "Ourselves", "We",
+        "Our" and "Us", refers to our Company. "Party", "Parties", or "Us",
+        refers to both the Client and ourselves. All terms refer to the offer,
+        acceptance and consideration of payment necessary to undertake the
+        process of our assistance to the Client in the most appropriate manner
+        for the express purpose of meeting the Client's needs in respect of
+        provision of the Company's stated services, in accordance with and
+        subject to, prevailing law of in. Any use of the above terminology or
+        other words in the singular, plural, capitalization and/or he/she or
+        they, are taken as interchangeable and therefore as referring to same.
       </p>
 
       <h2 className="text-2xl font-semibold mt-8 mb-4">Cookies</h2>
@@ -64,14 +63,20 @@ const TermsAndConditions = () => {
       </p>
       <ul className="list-disc list-inside mb-4">
         <li>Republish material from Ramanlal Maniyar Smruti Foundation</li>
-        <li>Sell, rent or sub-license material from Ramanlal Maniyar Smruti Foundation</li>
-        <li>Reproduce, duplicate or copy material from Ramanlal Maniyar Smruti Foundation</li>
+        <li>
+          Sell, rent or sub-license material from Ramanlal Maniyar Smruti
+          Foundation
+        </li>
+        <li>
+          Reproduce, duplicate or copy material from Ramanlal Maniyar Smruti
+          Foundation
+        </li>
         <li>Redistribute content from Ramanlal Maniyar Smruti Foundation</li>
       </ul>
 
       <p className="mb-4">
         This Agreement shall begin on the date hereof. Our Terms and Conditions
-        were created with the help of the{" "}
+        were created with the help of the{' '}
         <a
           href="https://www.termsandconditionsgenerator.com"
           className="text-blue-600 underline"
@@ -89,7 +94,9 @@ const TermsAndConditions = () => {
         the use of this website. Nothing in this disclaimer will:
       </p>
       <ul className="list-disc list-inside mb-4">
-        <li>Limit or exclude our or your liability for death or personal injury;</li>
+        <li>
+          Limit or exclude our or your liability for death or personal injury;
+        </li>
         <li>
           Limit or exclude our or your liability for fraud or fraudulent
           misrepresentation;

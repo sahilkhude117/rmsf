@@ -1,19 +1,21 @@
-"use client";
+'use client';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-const ProgramTitle = ({title,src,alt}:{title:string,src:string,alt:string}) => {
+const ProgramTitle = ({
+  title,
+  src,
+  alt,
+}: {
+  title: string;
+  src: string;
+  alt: string;
+}) => {
   return (
     <div className="relative w-full h-[400px] overflow-hidden">
       {/* Image background */}
       <div className="absolute inset-0 z-[-1]">
-        <Image
-          src={src}
-          alt={alt}
-          layout="fill"
-          objectFit="cover"
-          priority
-        />
+        <Image src={src} alt={alt} layout="fill" objectFit="cover" priority />
       </div>
 
       {/* Blue overlay */}
@@ -34,4 +36,3 @@ const ProgramTitle = ({title,src,alt}:{title:string,src:string,alt:string}) => {
 };
 
 export default ProgramTitle;
-

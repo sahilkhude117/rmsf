@@ -1,6 +1,3 @@
-
-export default function(){
-    return <div>
-        refund Policy
-    </div>
+export default function () {
+  return <div>refund Policy</div>;
 }

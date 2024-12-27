@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const RefundPolicy: React.FC = () => {
   return (
@@ -48,9 +48,7 @@ const RefundPolicy: React.FC = () => {
         day. Together, we are building a legacy of compassion, empowerment, and
         hope.
       </p>
-      <p className="text-sm text-gray-500 mt-8">
-        Last Updated: 19-12-2024
-      </p>
+      <p className="text-sm text-gray-500 mt-8">Last Updated: 19-12-2024</p>
     </div>
   );
 };

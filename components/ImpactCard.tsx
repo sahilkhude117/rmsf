@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { div } from 'framer-motion/client';
 import { Divide } from 'lucide-react';
 import React, { useState, useEffect, useRef } from 'react';
@@ -38,7 +38,10 @@ export const ImpactCard = ({
     <div ref={cardRef} className="max-w-sm mx-auto p-5 bg-gray-100 text-center">
       <div className="text-center text-8xl font-bold max-w-4xl w-full text-orange-600">
         {startCount ? (
-          <div><CountUp end={parseFloat(Number)} duration={2.5} />{`+`}</div>
+          <div>
+            <CountUp end={parseFloat(Number)} duration={2.5} />
+            {`+`}
+          </div>
         ) : (
           Number // Default state before starting
         )}
@@ -50,4 +53,3 @@ export const ImpactCard = ({
     </div>
   );
 };
-

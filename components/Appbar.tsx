@@ -1,6 +1,6 @@
-import { Logo } from "./Logo";
-import { Button } from "./Button";
-import { DropdownItem, NavbarItem } from "./NavbarItem";
+import { Logo } from './Logo';
+import { Button } from './Button';
+import { DropdownItem, NavbarItem } from './NavbarItem';
 
 export default function Appbar() {
   return (
@@ -13,11 +13,11 @@ export default function Appbar() {
 
         {/* Navigation Links Centered */}
         <div className="hidden md:flex flex-1 justify-center space-x-8">
-            <NavbarItem href="/home" title="HOME"  />
-            <DropdownItem href="" title="PROGRAMS" />
-            <NavbarItem href="/home#certificates" title="CERTIFICATES" />
-            <NavbarItem href="/home#gallery" title="GALLERY"  />
-            <NavbarItem href="/home#about" title="ABOUT US" />
+          <NavbarItem href="/home" title="HOME" />
+          <DropdownItem href="" title="PROGRAMS" />
+          <NavbarItem href="/home#certificates" title="CERTIFICATES" />
+          <NavbarItem href="/home#gallery" title="GALLERY" />
+          <NavbarItem href="/home#about" title="ABOUT US" />
         </div>
 
         {/* Donate Button */}
@@ -28,4 +28,3 @@ export default function Appbar() {
     </nav>
   );
 }
-
