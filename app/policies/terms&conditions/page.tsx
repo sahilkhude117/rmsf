@@ -2,9 +2,11 @@ import React from 'react';
 
 const TermsAndConditions = () => {
   return (
-    <div className="pt-20 px-8 max-w-5xl mx-auto mt-20 mb-20">
-      <h1 className="text-4xl font-bold mb-6">Terms and Conditions</h1>
-      <p className="mb-4">
+    <div className="pt-20 px-4 sm:px-8 lg:px-12 max-w-5xl mx-auto mt-20 mb-20">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-6">
+        Terms and Conditions
+      </h1>
+      <p className="mb-4 text-base sm:text-lg">
         Welcome to Ramanlal Maniyar Smruti Foundation! These terms and
         conditions outline the rules and regulations for the use of Ramanlal
         Maniyar Smruti Foundation's Website, located at{' '}
@@ -16,13 +18,13 @@ const TermsAndConditions = () => {
         </a>
         .
       </p>
-      <p className="mb-4">
+      <p className="mb-4 text-base sm:text-lg">
         By accessing this website we assume you accept these terms and
         conditions. Do not continue to use Ramanlal Maniyar Smruti Foundation if
         you do not agree to take all of the terms and conditions stated on this
         page.
       </p>
-      <p className="mb-4">
+      <p className="mb-4 text-base sm:text-lg">
         The following terminology applies to these Terms and Conditions, Privacy
         Statement and Disclaimer Notice and all Agreements: "Client", "You" and
         "Your" refers to you, the person log on this website and compliant to
@@ -38,13 +40,13 @@ const TermsAndConditions = () => {
         they, are taken as interchangeable and therefore as referring to same.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-4">Cookies</h2>
-      <p className="mb-4">
+      <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-4">Cookies</h2>
+      <p className="mb-4 text-base sm:text-lg">
         We employ the use of cookies. By accessing Ramanlal Maniyar Smruti
         Foundation, you agreed to use cookies in agreement with the Ramanlal
         Maniyar Smruti Foundation's Privacy Policy.
       </p>
-      <p className="mb-4">
+      <p className="mb-4 text-base sm:text-lg">
         Most interactive websites use cookies to let us retrieve the user's
         details for each visit. Cookies are used by our website to enable the
         functionality of certain areas to make it easier for people visiting our
@@ -52,8 +54,8 @@ const TermsAndConditions = () => {
         cookies.
       </p>
 
-      <h2 className="text-2xl font-semibold mt-8 mb-4">License</h2>
-      <p className="mb-4">
+      <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-4">License</h2>
+      <p className="mb-4 text-base sm:text-lg">
         Unless otherwise stated, Ramanlal Maniyar Smruti Foundation and/or its
         licensors own the intellectual property rights for all material on
         Ramanlal Maniyar Smruti Foundation. All intellectual property rights are
@@ -61,7 +63,7 @@ const TermsAndConditions = () => {
         for your own personal use subjected to restrictions set in these terms
         and conditions.
       </p>
-      <ul className="list-disc list-inside mb-4">
+      <ul className="list-disc list-inside mb-4 text-base sm:text-lg">
         <li>Republish material from Ramanlal Maniyar Smruti Foundation</li>
         <li>
           Sell, rent or sub-license material from Ramanlal Maniyar Smruti
@@ -74,7 +76,7 @@ const TermsAndConditions = () => {
         <li>Redistribute content from Ramanlal Maniyar Smruti Foundation</li>
       </ul>
 
-      <p className="mb-4">
+      <p className="mb-4 text-base sm:text-lg">
         This Agreement shall begin on the date hereof. Our Terms and Conditions
         were created with the help of the{' '}
         <a
@@ -87,13 +89,15 @@ const TermsAndConditions = () => {
       </p>
 
       {/* Add more sections similarly */}
-      <h2 className="text-2xl font-semibold mt-8 mb-4">Disclaimer</h2>
-      <p className="mb-4">
+      <h2 className="text-xl sm:text-2xl font-semibold mt-8 mb-4">
+        Disclaimer
+      </h2>
+      <p className="mb-4 text-base sm:text-lg">
         To the maximum extent permitted by applicable law, we exclude all
         representations, warranties and conditions relating to our website and
         the use of this website. Nothing in this disclaimer will:
       </p>
-      <ul className="list-disc list-inside mb-4">
+      <ul className="list-disc list-inside mb-4 text-base sm:text-lg">
         <li>
           Limit or exclude our or your liability for death or personal injury;
         </li>
@@ -110,13 +114,13 @@ const TermsAndConditions = () => {
           applicable law.
         </li>
       </ul>
-      <p className="mb-4">
+      <p className="mb-4 text-base sm:text-lg">
         As long as the website and the information and services on the website
         are provided free of charge, we will not be liable for any loss or
         damage of any nature.
       </p>
 
-      <p className="text-sm text-gray-500 mt-8">
+      <p className="text-sm text-gray-500 mt-8 text-center">
         Effective date for policy: 19-02-2024
       </p>
     </div>
