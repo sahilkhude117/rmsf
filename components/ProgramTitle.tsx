@@ -20,14 +20,14 @@ const ProgramTitle = ({
 
       {/* Blue overlay */}
       <div className="absolute inset-0 bg-blue-500 bg-opacity-50 flex justify-center items-center">
-        <p className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-center">
+        <p className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-center pt-10 md:pt-0">
           {title}
         </p>
       </div>
 
       {/* Bottom tilted effect */}
       <svg
-        className="absolute bottom-0 left-0 w-full h-20 sm:h-24 lg:h-28"
+        className="absolute bottom-0 left-0 w-full h-10 sm:h-24 lg:h-28"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       >

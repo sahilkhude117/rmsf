@@ -8,13 +8,14 @@ import { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { PulseLoader } from 'react-spinners';
+import prisma from '@/utils/db';
 
 export default function () {
   const searchParams = useSearchParams();
   const userId = searchParams.get('userId');
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const { userInfo, customAmount, donationType, campaign } = useSelector(
+  const { id, userInfo, customAmount, donationType, campaign } = useSelector(
     (state: RootState) => state.donation
   );
 
@@ -33,6 +34,34 @@ export default function () {
       document.body.appendChild(script);
     });
   }, []);
+
+  const updateDb = async (payload: any) => {
+    const body = await payload.json();
+    const { razorpay_order_id } = body;
+
+    // update payment status in database
+    try {
+      await prisma.payment.create({
+        data: {
+          donationId: id,
+          status: 'SUCCESS',
+          transactionId: razorpay_order_id,
+          details: {},
+        },
+      });
+
+      await prisma.donation.update({
+        where: { id: id },
+        data: {
+          paymentStatus: 'SUCCESS',
+          transactionId: razorpay_order_id,
+        },
+      });
+    } catch (dbError) {
+      console.error('Database update failed:', dbError);
+      return;
+    }
+  };
 
   const handlePayment = useCallback(
     async (order: any) => {
@@ -56,6 +85,7 @@ export default function () {
             });
             if (verify.data.success) {
               alert('Payment verified successfully!');
+              updateDb(payload);
             } else {
               alert('Payment verification failed!');
             }
@@ -194,20 +224,6 @@ export default function () {
               )}
             </button>
           </div>
-        </div>
-
-        <div className="flex m-5">
-          <input
-            type="checkbox"
-            id="includeProcessing"
-            checked={userInfo.includeProcessing}
-            onChange={handleCheckboxChange}
-            className="w-5 h-5 text-blue-500 border-blue-500 rounded cursor-pointer focus:ring-blue-500 mr-2"
-          />
-          <label className="text-gray-700 flex justify-center items-center">
-            Optionally add {Number(customAmount) * 0.02} to cover processing
-            fees
-          </label>
         </div>
       </DonationBar>
     </div>

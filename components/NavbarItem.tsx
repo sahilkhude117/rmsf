@@ -5,22 +5,17 @@ import React, { useState } from 'react';
 export const NavbarItem = ({
   href,
   title,
+  onClick,
 }: {
   href: string;
   title: string;
+  onClick: any;
 }) => {
-  const router = useRouter();
   const pathname = usePathname();
-
   const selected = pathname === href;
 
   return (
-    <div
-      className={`flex cursor-pointer pl-4`}
-      onClick={() => {
-        router.push(href);
-      }}
-    >
+    <div className={`flex cursor-pointer pl-4`} onClick={onClick}>
       <div className="group relative font-extrabold">
         {/* Title */}
         <div className={`text-black`}>{title}</div>
