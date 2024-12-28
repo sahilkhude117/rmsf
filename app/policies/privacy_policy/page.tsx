@@ -2,12 +2,12 @@ import React from 'react';
 
 const PrivacyPolicy = () => {
   return (
-    <div className="pt-20 px-8 max-w-4xl mx-auto mt-20 mb-20">
-      <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+    <div className="pt-20 px-4 sm:px-8 md:px-12 lg:px-16 max-w-7xl mx-auto mt-20 mb-20">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-8">Privacy Policy</h1>
       <p className="text-sm text-gray-600 mb-4">Last Updated : 19-12-2024</p>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">
           Your privacy is important to us
         </h2>
         <p className="mb-4">
@@ -39,8 +39,8 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Contents</h2>
-        <ul className="list-disc pl-6">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">Contents</h2>
+        <ul className="list-disc pl-6 space-y-2">
           <li>Personally-Identifying Information</li>
           <li>Security</li>
           <li>Links To External Sites</li>
@@ -50,7 +50,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">
           1. Personally-Identifying Information
         </h2>
         <p className="mb-4">
@@ -69,7 +69,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">2. Security</h2>
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">2. Security</h2>
         <p className="mb-4">
           The security of your Personal Information is important to us, but
           remember that no method of transmission over the Internet, or method
@@ -80,7 +80,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">
           3. Links To External Sites
         </h2>
         <p className="mb-4">
@@ -97,7 +97,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">
           4. Privacy Policy Changes
         </h2>
         <p className="mb-4">
@@ -110,7 +110,7 @@ const PrivacyPolicy = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4">
+        <h2 className="text-xl sm:text-2xl font-semibold mb-4">
           5. Contact Information & Credit
         </h2>
         <p className="mb-4">
