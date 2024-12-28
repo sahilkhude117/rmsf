@@ -8,12 +8,12 @@ import Gallery from '@/components/Gallery';
 
 export default function () {
   return (
-    <div className="mt-20">
+    <div className="mt-20 space-y-10">
       {/* Carousel Image */}
       <Carousel />
 
       {/* Intro Content */}
-      <div className="pt-20 pb-10">
+      <div className="pt-20 pb-10 px-4 sm:px-8 lg;px-16">
         <Paragraph
           content={`The Ramanlal Maniyar Smruti Foundation (RMS Foundation), based in Gadhinglaj, continues the legacy of Late Shri Ramanlal Maniyar by supporting education, healthcare, and providing food to the needy. We offer scholarships to deserving students, help pay medical bills for those in need, and ensure food reaches those facing hunger.`}
         />
@@ -29,13 +29,13 @@ export default function () {
       </div>
 
       {/* Impact Box */}
-      <div className="bg-gray-100 p-10">
+      <div className="bg-gray-100 p-10 sm:px-6 lg:px-16">
         <div className="flex justify-center items-center">
-          <div className="text-center text-5xl font-extrabold max-w-4xl w-full">
+          <div className="text-center text-3xl sm:text-4xl lg:text-5xl font-extrabold max-w-4xl w-full">
             OUR IMAPCT
           </div>
         </div>
-        <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 sm:grid-clos-2 lg:grid-cols-3 gap-6">
           <ImpactCard
             Number="2000+"
             Unit="FAMILIES"
@@ -54,13 +54,13 @@ export default function () {
         </div>
       </div>
 
-      <div className="pt-10 pb-0">
+      <div className="pt-10 pb-0 px-4 sm:px-8 lg:px-16">
         <div className="flex justify-center items-center">
-          <div className="text-center text-5xl font-extrabold max-w-4xl w-full">
+          <div className="text-center text-3xl sm:text-4xl lg:text-5xl font-extrabold max-w-4xl w-full">
             OUR PROGRAMS
           </div>
         </div>
-        <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <ProgramCard
             href={'/programs/education'}
             src="https://th.bing.com/th/id/OIP.HpFOt6qVIIH8j3ku0Y-tIgHaEY?w=306&h=181&c=7&r=0&o="
