@@ -20,18 +20,20 @@ export const ProgramCard = ({
         router.push(href);
       }}
     >
-      <div className="max-w-sm w-full bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-100">
+      <div className="max-w-sm w-full bg-white rounded-lg shadow-lg overflow-hidden">
         <div>
           <img
-            className="object-cover h-64 w-full"
+            className="object-cover w-full h-48 sm:h-56 md:h-64"
             src={src}
-            alt="Converse sneakers"
+            alt={title}
           />
         </div>
 
         <div className="flex flex-col gap-1 mt-3 p-4">
-          <h2 className="text-2xl font-bold ">{title}</h2>
-          <span className="font-normal pb-5">{content}</span>
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold">{title}</h2>
+          <span className="font-normal text-sm sm:text-base pb-5">
+            {content}
+          </span>
         </div>
       </div>
     </div>

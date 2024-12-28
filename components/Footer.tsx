@@ -34,7 +34,7 @@ const Footer = () => {
 
   return (
     <footer id="about" className="bg-gray-300">
-      <div className="max-w-screen-lg px-3 sm:px-6 mx-auto text-gray-800 sm:grid md:grid-cols-3 sm:grid-cols-2">
+      <div className="max-w-screen-lg px-3 sm:px-6 mx-auto text-gray-800 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div className="pt-10 mr-0">
           <h3 className="font-bold text-xl text-indigo-600">
             Ramanlal Maniyar Smruti Foundation

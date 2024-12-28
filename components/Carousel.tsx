@@ -8,6 +8,7 @@ export const Carousel = () => {
         alt="Description of the image"
         width={2000}
         height={800}
+        className="w-full h-auto object-cover"
       />
     </div>
   );

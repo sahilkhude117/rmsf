@@ -55,7 +55,7 @@ const ThreeIconScroll = ({
       {/* Section for scrolling icons */}
       <div
         ref={sectionRef}
-        className="relative mt-20 flex justify-center items-center space-x-20"
+        className="relative mt-12 md:mt-16 lg:mt-20 flex justify-center items-center space-x-2 sm:space-x-5 md:space-x-10 lg:space-x-20"
       >
         <motion.div
           style={{ y: yPosition }}

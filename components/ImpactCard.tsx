@@ -35,8 +35,11 @@ export const ImpactCard = ({
   }, []);
 
   return (
-    <div ref={cardRef} className="max-w-sm mx-auto p-5 bg-gray-100 text-center">
-      <div className="text-center text-8xl font-bold max-w-4xl w-full text-orange-600">
+    <div
+      ref={cardRef}
+      className="max-w-sm mx-auto p-5 bg-gray-100 text-center sm:max-w-md md:max-w-lg lg:max-w-xl"
+    >
+      <div className="text-center text-6xl sm:text-7xl lg:text-8xl font-bold text-orange-600">
         {startCount ? (
           <div>
             <CountUp end={parseFloat(Number)} duration={2.5} />
@@ -46,10 +49,12 @@ export const ImpactCard = ({
           Number // Default state before starting
         )}
       </div>
-      <div className="text-center text-3xl font-semibold max-w-4xl mt-5 w-full text-orange-600">
+      <div className="text-center text-xl sm:text-2xl lg:text-3xl font-semibold mt-3 text-orange-600">
         {Unit.toUpperCase()}
       </div>
-      <p className="text-gray-600 m-4 max-w-4xl text-center">{Content}</p>
+      <p className="text-gray-600 mt-4 text-sm sm:text-base lg:text-lg">
+        {Content}
+      </p>
     </div>
   );
 };

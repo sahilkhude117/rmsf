@@ -49,14 +49,14 @@ export const WhatWeDo = ({
       {/* Main Content */}
       <div className="bg-blue-500 bg-opacity-50">
         <div className=" flex justify-center items-center">
-          <p className="text-black text-6xl font-extrabold mt-20 mb-5">
+          <p className="text-black text-4xl sm:text-5xl md:text-6xl font-extrabold mt-20 mb-5">
             {title}
           </p>
         </div>
         <div>
           <Paragraph content={content} />
         </div>
-        <div className="grid grid-cols-2 mt-20 pl-80 pr-80">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-5 md:px-20 mt-20">
           <IconCard
             title={IconTitle1}
             content={IconContent1}

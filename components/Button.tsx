@@ -15,7 +15,11 @@ export const Button = ({ href, text }: { href: string; text: string }) => {
           router.push(href);
         }}
         type="button"
-        className={`text-white font-extrabold text-xl rounded-lg px-5 py-2 text-center ${selected ? 'bg-orange-600' : 'bg-blue-700 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300'}`}
+        className={`text-white font-extrabold text-sm sm:text-base md:text-lg lg:text-xl rounded-lg px-4 sm:px-5 md:px-6 py-2 sm:py-3 text-center ${
+          selected
+            ? 'bg-orange-600'
+            : 'bg-blue-700 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300'
+        } transition duration-300 ease-in-out`}
       >
         {text}
       </button>

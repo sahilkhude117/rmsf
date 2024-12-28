@@ -4,12 +4,12 @@ export const ViewMore = () => {
   return (
     <article className="max-w-2xl px-6 py-24 mx-auto space-y-12">
       <div className="w-full mx-auto space-y-4 text-center">
-        <h1 className="text-3xl font-bold leading-tight md:text-4xl">
+        <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
           RAMANLAL MANIYAR SMRUTI FOUNDATION
         </h1>
       </div>
 
-      <div className="dark:text-gray-800 space-y-6">
+      <div className="space-y-6 sm:space-y-8 md:space-y-10">
         <Paragraph
           content={`The Ramanlal Maniyar Smruti Foundation (RMS Foundation), based in Gadhinglaj, continues the legacy of Late Shri Ramanlal Maniyar by supporting education, healthcare, and providing food to the needy. We offer scholarships to deserving students, help pay medical bills for those in need, and ensure food reaches those facing hunger.`}
         />

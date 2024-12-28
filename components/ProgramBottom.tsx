@@ -9,12 +9,12 @@ export const ProgramBottom = ({
   href: string;
 }) => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex flex-col sm:flex-row justify-center items-center sm:space-x-10">
       <div className="m-10">
         <Button href={href} text={text} />
       </div>
-      <div className="m-10">
-        <div className="text-3xl font-semibold">FOR SUPPORT</div>
+      <div className="text-center sm:text-left">
+        <div className="text-3xl sm:text-4xl font-semibold">FOR SUPPORT</div>
         <div className="text-xl mt-2 mb-2">write to</div>
         <Link
           href="mailto:rmsfoundationindia@gmail.com"

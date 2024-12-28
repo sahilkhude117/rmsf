@@ -12,7 +12,7 @@ export default function () {
         alt="Education"
         title="EDUCATION"
       />
-      <div className="grid grid-cols-2 gap-5 pt-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-5 sm:pt-10 md:pt-20">
         <ThreeIconScroll
           src1="/images/animated/education/learning.gif"
           src2="/images/animated/education/math.gif"
@@ -25,11 +25,11 @@ export default function () {
         <ProgramParagraph
           title="WHY"
           content="We firmly believe that the key to transforming lives lies in empowering the next generation with quality education. Education not only opens doors to opportunities but also uplifts individuals, families, and communities.
-                         Despite various programs by the State and Central Government supporting education up to the 8th standard, there is a concerning dropout rate among students after 8th grade. Many students are unable to continue their education due to financial challenges, limiting their potential and future opportunities.
-                         Additionally, numerous capable students in Government and Government-aided institutes settle for graduate courses instead of pursuing professional courses that could significantly improve their economic condition and quality of life."
+                  Despite various programs by the State and Central Government supporting education up to the 8th standard, there is a concerning dropout rate among students after 8th grade. Many students are unable to continue their education due to financial challenges, limiting their potential and future opportunities.
+                  Additionally, numerous capable students in Government and Government-aided institutes settle for graduate courses instead of pursuing professional courses that could significantly improve their economic condition and quality of life."
         />
       </div>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <ProgramParagraph content="In rural areas, countless talented students from government-aided schools face significant challenges in pursuing higher education. Often, they settle for basic graduate courses, despite having the capability to excel in professional studies, simply because of financial constraints. This limits their opportunities for economic and social mobility. RMSF recognizes these challenges and actively works to support students in overcoming them. Our initiatives include providing scholarships, school supplies, and professional guidance, starting in Gadhinglaj Taluka. By removing barriers to education, we aim to enable students to unlock their true potential and build a brighter future for themselves and their families." />
         <ThreeIconScroll
           src1="/images/animated/education/learning.gif"
@@ -60,35 +60,41 @@ export default function () {
       />
 
       {/* Bottom Section */}
-      <div className="relative w-full text-black p-10">
+      <div className="relative w-full text-black p-4 sm:p-10">
         {/* Title */}
-        <h1 className="text-2xl font-bold mb-8 animate-[fade-in_1s_ease-out]">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-6 animate-[fade-in_1s_ease-out]">
           For the academic year of 2023-24, RMSF shall offer following
           Scholarships :
         </h1>
 
         {/* Subheading container */}
-        <div className="w-full max-w-4xl space-y-5 ml-20">
+        <div className="w-full max-w-4xl space-y-4 sm:space-y-5 mx-4 sm:ml-20">
           {/* Item A */}
           <div className="flex justify-between items-center bg-white bg-opacity-20 rounded-lg p-4 shadow-md backdrop-blur-md">
-            <h2 className="text-lg ">
+            <h2 className="text-base sm:text-lg">
               A. Scholarship for needy students for Engineering
             </h2>
-            <p className="text-xl font-semibold">15 Nos</p>
+            <p className="text-base sm:text-xl font-semibold ml-auto">15 Nos</p>
           </div>
 
           {/* Item B */}
           <div className="flex justify-between items-center bg-white bg-opacity-20 rounded-lg p-4 shadow-md backdrop-blur-md ">
-            <h2 className="text-lg">
+            <h2 className="text-base sm:text-lg">
               B. Scholarship for needy students from 9th to 12 th
             </h2>
-            <p className="text-xl font-semibold">100 Nos</p>
+            <p className="text-base sm:text-xl font-semibold ml-auto">
+              100 Nos
+            </p>
           </div>
 
           {/* Item C */}
           <div className="flex justify-between items-center bg-white bg-opacity-20 rounded-lg p-4 shadow-md backdrop-blur-md">
-            <h2 className="text-lg">C. School material Distribution</h2>
-            <p className="text-xl font-semibold">500 Nos</p>
+            <h2 className="text-base sm:text-lg">
+              C. School material Distribution
+            </h2>
+            <p className="text-base sm:text-xl font-semibold ml-auto">
+              500 Nos
+            </p>
           </div>
         </div>
       </div>

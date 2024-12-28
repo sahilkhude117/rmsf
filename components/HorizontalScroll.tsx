@@ -14,14 +14,17 @@ export default function HorizontalScroll() {
   return (
     <section
       ref={targetRef}
-      className="relative h-[200vh] mb-10"
+      className="relative h-[150vh] sm:h-[200vh] mb-10"
       id="certificates"
     >
       <div className="sticky top-10 bottom-20 flex h-[450px] items-center flex-col overflow-hidden">
-        <h2 className="text-center mt-20 mb-10 font-extrabold text-5xl">
+        <h2 className="text-center mt-10 sm:mt-20 mb-5 font-extrabold text-3xl sm:text-4xl lg:text-5xl">
           CERTIFICATES
         </h2>
-        <motion.div style={{ x }} className="flex gap-10 h-60 w-200">
+        <motion.div
+          style={{ x }}
+          className="flex gap-5 sm:gap-10 h-40 sm:h-60 w-[200%]"
+        >
           <HorizontalBox
             src="/images/animated/home/stamp.gif"
             alt="Trust Registration Certificate"

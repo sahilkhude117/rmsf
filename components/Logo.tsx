@@ -3,18 +3,22 @@ import Link from 'next/link';
 
 export const Logo = () => {
   return (
-    <div>
-      <Link href="/" className="flex space-x-1">
+    <div className="flex items-center">
+      <Link href="/" className="flex items-center space-x-2 md:space-x-4">
         <Image
           src="/images/rms_logo.png"
           alt="Logo"
           width={50}
           height={50}
-          className="h-15 w-15"
+          className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-full"
         />
         <div className="flex flex-col items-left text-black pl-2">
-          <div className="font-bold text-xl">RAMANLAL MANIYAR</div>
-          <div className="font-semibold">SMRUTI FOUNDATION</div>
+          <div className="font-bold text-lg sm:text-xl md:text-2xl">
+            RAMANLAL MANIYAR
+          </div>
+          <div className="font-semibold text-sm sm:text-base md:text-lg">
+            SMRUTI FOUNDATION
+          </div>
         </div>
       </Link>
     </div>

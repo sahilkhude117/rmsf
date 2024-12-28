@@ -21,18 +21,18 @@ export const Gallery = () => {
   ];
 
   return (
-    <div id="gallery" className="min-h-screen bg-gray-100 py-8 px-10">
-      <h1 className="text-4xl font-extrabold text-center mb-8 text-gray-800">
+    <div id="gallery" className="min-h-screen bg-gray-100 py-8 px-4 sm:px-10">
+      <h1 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 text-gray-800">
         Gallery
       </h1>
-      <h3 className="text-xl u font-bold text-center mb-8 text-gray-800">
+      <h3 className="text-lg sm:text-xl font-bold text-center mb-8 text-gray-800">
         PICTORIAL TRIBUTE TO RAMANBHAI
       </h3>
-      <div className="columns-1 md:columns-2 xl:columns-3 gap-6">
+      <div className="columns-1 sm:columns-2 xl:columns-3 gap-4 sm:gap-6">
         {images.map((image, index) => (
           <div
             key={index}
-            className="relative mb-6 break-inside-avoid overflow-hidden rounded-lg group"
+            className="relative mb-6 overflow-hidden rounded-lg group"
           >
             <img
               src={image.src}
@@ -41,7 +41,9 @@ export const Gallery = () => {
             />
             {/* Optional overlay text */}
             <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-              <p className="text-white text-lg font-medium">{image.title}</p>
+              <p className="text-white text-sm sm:text-lg font-medium">
+                {image.title}
+              </p>
             </div>
           </div>
         ))}

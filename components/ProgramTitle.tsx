@@ -12,7 +12,7 @@ const ProgramTitle = ({
   alt: string;
 }) => {
   return (
-    <div className="relative w-full h-[400px] overflow-hidden">
+    <div className="relative w-full h-[200px] sm:h-[300px] lg:h-[400px] overflow-hidden">
       {/* Image background */}
       <div className="absolute inset-0 z-[-1]">
         <Image src={src} alt={alt} layout="fill" objectFit="cover" priority />
@@ -20,12 +20,14 @@ const ProgramTitle = ({
 
       {/* Blue overlay */}
       <div className="absolute inset-0 bg-blue-500 bg-opacity-50 flex justify-center items-center">
-        <p className="text-white text-8xl font-extrabold">{title}</p>
+        <p className="text-white text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-center">
+          {title}
+        </p>
       </div>
 
       {/* Bottom tilted effect */}
       <svg
-        className="absolute bottom-0 left-0 w-full h-20"
+        className="absolute bottom-0 left-0 w-full h-20 sm:h-24 lg:h-28"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
       >

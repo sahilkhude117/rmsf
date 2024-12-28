@@ -12,7 +12,7 @@ export default function () {
         alt="Cooperation"
         title="COOPERATION"
       />
-      <div className="grid grid-cols-2 gap-5 pt-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-20">
         <ThreeIconScroll
           src1="/images/animated/cooperation/free.gif"
           src2="/images/animated/cooperation/mentorship.gif"
@@ -27,7 +27,7 @@ export default function () {
           content="Hunger remains a harsh reality for countless individuals who struggle daily to access basic food. Despite numerous government and charitable initiatives, a significant portion of the population continues to face food insecurity, particularly in rural and tribal areas. Addressing this issue is not merely about providing meals but ensuring dignity and a sense of security to the less fortunate. The Ramanlal Maniyar Smruti Foundation recognizes that eliminating hunger is fundamental to uplifting lives and fostering a healthier, more equitable society. By focusing on immediate and sustainable solutions, RMSF aims to create a lasting impact on hunger eradication.."
         />
       </div>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <ProgramParagraph content="The issue of hunger is not confined to remote regions but exists even in urban areas where poverty and unemployment are rampant. Hunger robs individuals of the ability to work, study, and live with dignity. It perpetuates a cycle of poverty that affects entire communities. RMSF understands that supporting vulnerable groups with basic necessities like groceries is the first step toward breaking this cycle. By extending aid to organizations already working in rural and tribal regions, RMSF leverages their experience to maximize its impact and ensure that resources reach those who need them the most." />
         <ThreeIconScroll
           src1="/images/animated/cooperation/free.gif"

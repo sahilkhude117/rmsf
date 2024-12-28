@@ -46,7 +46,7 @@ export const IconCard = ({
   }, [controls]);
 
   return (
-    <div className="mb-20">
+    <div className="mb-10 md:mb-20">
       <div
         ref={sectionRef}
         className="relative flex justify-center items-center"
@@ -64,10 +64,10 @@ export const IconCard = ({
           />
         </motion.div>
       </div>
-      <div className="text-center maz-w-4xl w-full font-bold pl-20 pr-20">
+      <div className="text-center w-full font-bold text-xl md:text-2xl mt-4">
         {title}
       </div>
-      <div className="text-center max-w-4xl w-full pl-10 pr-10 pt-2">
+      <div className="text-center w-full text-sm md:text-base mt-2">
         {content}
       </div>
       {isButton ? (

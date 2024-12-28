@@ -9,7 +9,7 @@ export default function () {
   return (
     <div className="mt-10 mb-10">
       <ProgramTitle src="/images/white-bg.png" alt="Health" title="HEALTH" />
-      <div className="grid grid-cols-2 gap-5 pt-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-20">
         <ThreeIconScroll
           src1="/images/animated/health/hypoallergenic.gif"
           src2="/images/animated/health/medicine.gif"
@@ -24,7 +24,7 @@ export default function () {
           content="The COVID-19 pandemic brought the healthcare sector into sharp focus, emphasizing its importance in ensuring well-being. Despite various government schemes aimed at supporting healthcare needs, critical and life-threatening illnesses often require additional resources that many families cannot afford. This financial strain can make the difference between life and death, leaving loved ones in despair. The rising costs of healthcare have disproportionately affected rural areas, where access to quality medical care is already limited. Addressing this gap is essential to ensure that everyone, regardless of economic status, can access timely and adequate medical treatment during their most vulnerable moments.."
         />
       </div>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <ProgramParagraph content="In rural communities, healthcare remains a luxury rather than a right. Many families are forced to forego essential treatments due to prohibitive costs, leading to preventable loss of life. Critical illnesses often push families into financial ruin, creating a cycle of poverty that is difficult to escape. By providing support, we can address this inequality and offer hope to those in need. Addressing healthcare challenges involves not just immediate financial aid but also creating sustainable systems that make quality healthcare accessible to all, bridging the gap between the privileged and the underprivileged in their hour of need." />
         <ThreeIconScroll
           src1="/images/animated/health/hypoallergenic.gif"
