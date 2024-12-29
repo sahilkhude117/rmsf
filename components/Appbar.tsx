@@ -4,6 +4,9 @@ import { Button } from './Button';
 import { DropdownItem, NavbarItem } from './NavbarItem';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { Dialog, DialogPanel } from '@headlessui/react';
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Appbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,25 +20,65 @@ export default function Appbar() {
   return (
     <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200 shadow-md">
       <div className="flex items-center justify-between max-w-7xl mx-auto px-2 py-5">
-        <button
-          className="md:hidden text-gray-800"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle Menu"
-        >
-          <svg
-            className="w-8 h-8"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        <div className="flex lg:hidden">
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen(true)}
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={3}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
+            <Menu size={32} strokeWidth={3} />
+          </button>
+        </div>
+
+        <Dialog open={isMenuOpen} onClose={setIsMenuOpen} className="lg:hidden">
+          <div className="fixed inset-0 z-50" />
+          <DialogPanel className="fixed inset-y-0 left-0 z-50 w-3/4 overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div className="flex items-center justify-between">
+              <Image
+                src="/images/rms_logo.png"
+                alt="Logo"
+                width={50}
+                height={50}
+                className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-full"
+              />
+              <button
+                type="button"
+                onClick={() => setIsMenuOpen(false)}
+                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              >
+                <span className="sr-only">Close menu</span>
+                <X />
+              </button>
+            </div>
+            <div className="mt-6 flow-root">
+              <div className="-my-6 divide-y divide-gray-500/10">
+                <div className="space-y-2 py-6">
+                  <NavbarItem
+                    href="/home"
+                    title="HOME"
+                    onClick={() => handleMenuClick('/home')}
+                  />
+                  <DropdownItem href="" title="PROGRAMS" />
+                  <NavbarItem
+                    href="/home#certificates"
+                    title="CERTIFICATES"
+                    onClick={() => handleMenuClick('/home#certificates')}
+                  />
+                  <NavbarItem
+                    href="/home#gallery"
+                    title="GALLERY"
+                    onClick={() => handleMenuClick('/home#gallery')}
+                  />
+                  <NavbarItem
+                    href="/home#about"
+                    title="ABOUT US"
+                    onClick={() => handleMenuClick('/home#about')}
+                  />
+                </div>
+              </div>
+            </div>
+          </DialogPanel>
+        </Dialog>
 
         <div className="flex items-center">
           <Logo />
@@ -73,40 +116,6 @@ export default function Appbar() {
           <Button href="/donate/donation-form" text="Donate Now" />
         </div>
       </div>
-
-      {isMenuOpen && (
-        <div
-          className="fixed inset-x-0 top-20 bg-white z-30 shadow-lg md:hidden transition-transform transform duration-300 ease-in-out"
-          style={{
-            transform: isMenuOpen ? 'translateX(0)' : 'translateX(-100%)',
-            width: '250px',
-          }}
-        >
-          <div className="flex flex-col items-start space-y-4 px-4 py-3">
-            <NavbarItem
-              href="/home"
-              title="HOME"
-              onClick={() => handleMenuClick('/home')}
-            />
-            <DropdownItem href="" title="PROGRAMS" />
-            <NavbarItem
-              href="/home#certificates"
-              title="CERTIFICATES"
-              onClick={() => handleMenuClick('/home#certificates')}
-            />
-            <NavbarItem
-              href="/home#gallery"
-              title="GALLERY"
-              onClick={() => handleMenuClick('/home#gallery')}
-            />
-            <NavbarItem
-              href="/home#about"
-              title="ABOUT US"
-              onClick={() => handleMenuClick('/home#about')}
-            />
-          </div>
-        </div>
-      )}
     </nav>
   );
 }
