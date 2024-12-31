@@ -13,10 +13,10 @@ export const Logo = () => {
           className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 rounded-full"
         />
         <div className="flex flex-col items-left text-black">
-          <div className="font-bold text-xs sm:text-medium md:text-xl">
+          <div className="font-bold text-xs sm:text-base ">
             RAMANLAL MANIYAR
           </div>
-          <div className="font-semibold text-xs sm:text-base md:text-lg">
+          <div className="font-semibold text-xs sm:text-medium">
             SMRUTI FOUNDATION
           </div>
         </div>
