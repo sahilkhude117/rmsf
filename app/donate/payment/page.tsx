@@ -4,6 +4,7 @@ import { setUserInfo } from '@/redux/donationSlice';
 import { RootState } from '@/redux/store';
 import axios from 'axios';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -11,8 +12,7 @@ import { PulseLoader } from 'react-spinners';
 import prisma from '@/utils/db';
 
 export default function () {
-  const searchParams = useSearchParams();
-  const userId = searchParams.get('userId');
+  const userId = getUserId();
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const { id, userInfo, customAmount, donationType, campaign } = useSelector(
@@ -228,4 +228,10 @@ export default function () {
       </DonationBar>
     </div>
   );
+}
+
+async function getUserId() {
+  const searchParams = await useSearchParams();
+  const userId = await searchParams.get('userId');
+  return userId;
 }
