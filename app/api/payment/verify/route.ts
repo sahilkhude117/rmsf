@@ -3,8 +3,8 @@ import crypto from 'crypto';
 import { NextResponse } from 'next/server';
 
 const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID || '',
-  key_secret: process.env.RAZORPAY_KEY_SECRET || '',
+  key_id: process.env.RAZORPAY_KEY_ID || 'default_key',
+  key_secret: process.env.RAZORPAY_KEY_SECRET || 'default_key',
 });
 
 export const POST = async (req: Request) => {

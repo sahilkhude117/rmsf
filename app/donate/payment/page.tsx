@@ -3,7 +3,7 @@ import { DonationBar } from '@/components/donation/DonationBar';
 import { setUserInfo } from '@/redux/donationSlice';
 import { RootState } from '@/redux/store';
 import axios from 'axios';
-import { useSearchParams } from 'next/navigation';
+import { redirect, useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
 import { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -84,7 +84,7 @@ export default function () {
               headers: { 'Content-Type': 'application/json' },
             });
             if (verify.data.success) {
-              alert('Payment verified successfully!');
+              alert("Payment verified succesfully")
               updateDb(payload);
             } else {
               alert('Payment verification failed!');

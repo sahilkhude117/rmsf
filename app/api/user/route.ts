@@ -22,6 +22,7 @@ export const POST = async (req: Request) => {
       update: {
         firstName,
         lastName,
+        email,
         country,
         address,
         city,
